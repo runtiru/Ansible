@@ -1,11 +1,11 @@
 ---
 - name: Install Nop on ubuntu
-  hosts: 172.31.43.40
+  hosts: ubuntu
   become: true
   tasks:
     - name: download debian package
       ansible.builtin.get_url:
-        url: https://packages.microsoft.com/config/ubuntu/20.04/packages-microsoft-prod.deb/tmp/
+        url: https://packages.microsoft.com/config/ubuntu/20.04/packages-microsoft-prod.deb
         dest: /tmp
     - name: install debian package
       ansible.builtin.apt:
@@ -15,3 +15,10 @@
         name: dotnet-sdk-7.0
         state: presrnt
         update_cache: true
+    - name: Add the user nopCommerce with a primary group of nopCommerce
+      ansible.builtin.user:
+        name: nopCommerce
+    - name: Create a directory if it does not exist
+      ansible.builtin.file:
+        path: /var/www/nopCommerce
+        state: directory
