@@ -1,6 +1,6 @@
 ---
  - name: Install Nop on ubuntu
-   host: all
+   host: 172.31.43.40
    become: true
    tasks:
      - name: download debian package
