@@ -9,8 +9,7 @@
         dest: /tmp
     - name: install debian package
       ansible.builtin.apt:
-        name: packages-microsoft-prod.deb
-        state: present
+        deb: /tmp/packages-microsoft-prod.deb
     - name: install dotnet
       ansible.builtin.apt:
         name: dotnet-sdk-7.0
