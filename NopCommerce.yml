@@ -10,8 +10,8 @@
     - name: install debian package
       ansible.builtin.apt:
         deb: /tmp/packages-microsoft-prod.deb
-    - name: install dotnet
-      ansible.builtin.apt:
-        name: dotnet-sdk-7.0
-        state: presrnt
-        update_cache: yes
+    # - name: install dotnet
+    #   ansible.builtin.apt:
+    #     name: dotnet-sdk-7.0
+    #     state: presrnt
+    #     update_cache: true
