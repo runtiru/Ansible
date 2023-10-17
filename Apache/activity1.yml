@@ -1,11 +1,11 @@
 ---
 - name: run apache
   become: yes
-  hosts: 172.31.43.40
+  hosts: apache
   tasks:
     - name: Install apache2 server
       ansible.builtin.apt:
-        name: 
+        name:
           - apache2
         state: present
         update_cache: yes
