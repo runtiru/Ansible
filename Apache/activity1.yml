@@ -1,7 +1,7 @@
 ---
 - name: run apache
   become: yes
-  hosts: all
+  hosts: 172.31.43.40
   tasks:
     - name: Install apache2 server
       ansible.builtin.apt:
