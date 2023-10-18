@@ -18,3 +18,8 @@
       ansible.builtin.file:
         content: '<?php phpinfo(); ?>'
         dest: /var/www/html/info.php
+    - name: httpd service run
+      ansible.builtin.service:
+        name: httpd
+        state: staretd
+        enabled: yes
