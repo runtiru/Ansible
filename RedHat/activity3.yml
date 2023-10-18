@@ -11,10 +11,10 @@
           - php-cli
           - php-common
         state: latest
-    - name: create info.php
+    - name: create a file
       ansible.builtin.file:
-        # content: '<?php phpinfo(); ?>'
-        dest: /var/www/html/info2.php
+        content: '<?php phpinfo(); ?>'
+        dest: /var/www/html/info.php
     # - name: httpd service run
     #   ansible.builtin.service:
     #     name: httpd
