@@ -12,7 +12,7 @@
           - php-common
         state: latest
     - name: create a file
-      ansible.builtin.file:
+      ansible.builtin.copy:
         content: '<?php phpinfo(); ?>'
         dest: /var/www/html/info.php
     # - name: httpd service run
