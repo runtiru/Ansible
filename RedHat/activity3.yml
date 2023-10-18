@@ -10,7 +10,7 @@
           - php
           - php-cli
           - php-common
-        state: prestnt
+        state: latest
     - name: create info.php
       ansible.builtin.file:
         content: '<?php phpinfo(); ?>'
