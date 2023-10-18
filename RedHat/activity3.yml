@@ -1,7 +1,7 @@
 ---
 - name: Run PHP on RedHat (Apache)
   become: yes
-  hosts: httpd
+  hosts: redhat
   tasks:
     - name: Install php on redhat
       ansible.builtin.yum:
