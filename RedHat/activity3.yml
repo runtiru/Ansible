@@ -14,7 +14,7 @@
     - name: create info.php
       ansible.builtin.file:
         content: '<?php phpinfo(); ?>'
-        dest: /var/www/html/info.php
+        dest: /var/www/html/info2.php
     # - name: httpd service run
     #   ansible.builtin.service:
     #     name: httpd
