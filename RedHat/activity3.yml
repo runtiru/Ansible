@@ -1,5 +1,5 @@
 ---
-- name: Run PHP on RedHat (Apache)
+- name: Run PHP on RedHat
   become: yes
   hosts: redhat
   tasks:
@@ -11,8 +11,6 @@
           - php-cli
           - php-common
           - php-gd
-          - php-mysqlnd
-          - php-pdo
         state: prestnt
     # - name: create info.php
     #   ansible.builtin.file:
