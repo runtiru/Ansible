@@ -18,5 +18,5 @@
     - name: httpd service run
       ansible.builtin.service:
         name: httpd
-        state: staretd
+        state: started
         enabled: yes
