@@ -14,12 +14,12 @@
           - php-mysqlnd
           - php-pdo
         state: prestnt
-    - name: create info.php
-      ansible.builtin.file:
-        content: '<?php phpinfo(); ?>'
-        dest: /var/www/html/info.php
-    - name: httpd service run
-      ansible.builtin.service:
-        name: httpd
-        state: staretd
-        enabled: yes
+    # - name: create info.php
+    #   ansible.builtin.file:
+    #     content: '<?php phpinfo(); ?>'
+    #     dest: /var/www/html/info.php
+    # - name: httpd service run
+    #   ansible.builtin.service:
+    #     name: httpd
+    #     state: staretd
+    #     enabled: yes
