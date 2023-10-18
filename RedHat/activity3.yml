@@ -1,11 +1,11 @@
 ---
 - name: Install php on redhat
   become: yes
-  hosts: webserver
+  hosts: Apache
   tasks:
     - name: install apache
       ansible.builtin.yum:
-        name: 
+        name:
           - httpd
           - php
           - php-cli
