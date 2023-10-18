@@ -1,0 +1,20 @@
+---
+- name: Run PHP on RedHat (Apache)
+  become: yes
+  hosts: httpd
+  tasks:
+    - name: Install php on redhat
+      ansible.builtin.yum:
+        name: 
+          - httpd
+          - php
+          - php-cli
+          - php-common
+          - php-gd
+          - php-mysqlnd
+          - php-pdo
+        state: prestnt
+    - name: create info.php
+      ansible.builtin.file:
+        content: '<?php phpinfo(); ?>'
+        dest: /var/www/html/info.php
