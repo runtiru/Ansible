@@ -13,7 +13,7 @@
         state: latest
     - name: create a file
       ansible.builtin.copy:
-        content: '<?php phpinfo(); ?>'
+        content: ./info.php
         dest: /var/www/html/info.php
     - name: httpd service run
       ansible.builtin.service:
