@@ -1,0 +1,26 @@
+---
+- name: Install TomCat10
+  become: yes
+  hostes: appserver
+  vars:
+    username: tomcat
+    groupname: tomcat
+    homedir: /oopt/tomcat
+    shell: /bin/false
+  tasks:
+    - name: install jdk
+      ansible.builtin.apt:
+        name: "openjdk-{{ java_version }}-jdk"
+        state: present
+        update_cache: yes
+    - name: create tomcat group
+      ansible.builtin.group:
+        name: {{ username }}
+        state: present
+    - name: create tomcat user
+      ansible.builtin.user:
+        name: {{ username }}
+        group: {{ groupname }}
+        shell: {{ shell }}
+        create_home: true
+        home: {{ homedir }}
