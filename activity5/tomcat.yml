@@ -13,14 +13,14 @@
         name: "openjdk-{{ java_version }}-jdk"
         state: present
         update_cache: yes
-    # - name: create tomcat group
-    #   ansible.builtin.group:
-    #     name: {{ groupname }}
-    #     state: present
-    # - name: create tomcat user
-    #   ansible.builtin.user:
-    #     name: {{ username }}
-    #     group: {{ groupname }}
-    #     shell: {{ shell }}
-    #     create_home: true
-    #     home: {{ homedir }}
+    - name: create tomcat group
+      ansible.builtin.group:
+        name: "{{ groupname }}"
+        state: present
+    - name: create tomcat user
+      ansible.builtin.user:
+        name: "{{ username }}"
+        group: "{{ groupname }}"
+        shell: "{{ shell }}"
+        create_home: true
+        home: "{{ homedir }}"
