@@ -15,7 +15,7 @@
         update_cache: yes
     - name: create tomcat group
       ansible.builtin.group:
-        name: {{ username }}
+        name: {{ groupname }}
         state: present
     - name: create tomcat user
       ansible.builtin.user:
